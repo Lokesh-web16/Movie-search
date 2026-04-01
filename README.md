@@ -1,12 +1,12 @@
 # 🎬 Movie Search App
 
-A modern, animated **Movie Search Application** built with **React**, **Tailwind CSS** and **Framer Motion**. Search movies, explore details and manage your favorites — all wrapped in a cinematic glassmorphism UI!
+A modern, animated **Movie Search Application** built with **React**, **Tailwind CSS** and **Framer Motion**. Search movies, explore details and manage your favorites, all wrapped in a cinematic glassmorphism UI!
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 **[Visit the App Here](#)** *(Update with your Netlify link after deployment)*
+🔗 **[Visit the App Here](#)**
 
 ---
 
@@ -159,15 +159,6 @@ This project is configured for **Netlify** deployment:
 npm run build
 ```
 
-Upload the `dist/` folder to Netlify, or connect your GitHub repo for automatic deploys.
-
-The `public/_redirects` file handles SPA routing automatically.
-
-| Platform | Link |
-| :--- | :--- |
-| 🌐 **Live Site** | [Netlify](#) *(Update after deployment)* |
-| 💻 **Source Code** | [GitHub](https://github.com/Lokesh-web16/Movie-search) |
-
 ---
 
 ## 🔌 API Integration
@@ -183,35 +174,6 @@ The `public/_redirects` file handles SPA routing automatically.
 
 ---
 
-## 🎨 Design System
-
-### Color Palette
-
-| Color | Hex | Usage |
-| :--- | :--- | :--- |
-| 🔵 **Primary** | `#3b82f6` | Buttons, active states, glows |
-| 🟣 **Accent** | `#a855f7` | Gradients, badges, highlights |
-| 🔷 **Cyan** | `#0ea5e9` | Search bar glow, accents |
-| ⬛ **Dark BG** | `#050b18` | Main background |
-| 🟫 **Card BG** | `rgba(15,23,42,0.6)` | Glass card backgrounds |
-| 🩶 **Text** | `#e2e8f0` | Primary text color |
-| 🔘 **Muted** | `#64748b` | Secondary text, placeholders |
-
-### Animation Highlights
-
-| Animation | Where | Library |
-| :--- | :--- | :--- |
-| Card entrance (staggered fade + slide) | Search results grid | Framer Motion |
-| Card hover (lift + scale poster) | Movie cards | Framer Motion + CSS |
-| Favorite heart (spring bounce + rotate) | Movie card & details | Framer Motion |
-| Active tab indicator (layout animation) | Navbar | Framer Motion |
-| Search bar glow (focus reactive) | Search input | Framer Motion |
-| Shimmer loading | Skeleton cards | CSS keyframes |
-| Scrolling film strip | Footer | Framer Motion |
-| Blurred poster backdrop | Movie details page | CSS blur |
-| Page transitions | Route changes | Framer Motion AnimatePresence |
-
----
 
 ## 📱 Responsive Breakpoints
 
