@@ -1,6 +1,6 @@
 # 🎬 Movie Search App
 
-A modern, animated **Movie Search Application** built with **React**, **Tailwind CSS** and **Framer Motion**. Search movies, explore details and manage your favorites, all wrapped in a cinematic glassmorphism UI!
+A modern, animated **Movie Search Application** built with **React**, **Tailwind CSS** and **Framer Motion**. Search movies, explore details and manage your favorites, all wrapped in a cinematic glassmorphism UI
 
 ---
 
