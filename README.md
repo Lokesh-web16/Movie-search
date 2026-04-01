@@ -1,66 +1,244 @@
-# 🎬 Movies Search App
+# 🎬 Movie Search App
 
-A modern, animated movie search application built with React that integrates with the OMDB API. Features glassmorphism design, smooth animations, and a cinematic UI.
+A modern, animated **Movie Search Application** built with **React**, **Tailwind CSS** and **Framer Motion**. Search movies, explore details and manage your favorites — all wrapped in a cinematic glassmorphism UI!
 
-## Features
+---
 
-- **Search** — Find movies, series, and episodes by title with real-time results
-- **Type Filter** — Dropdown filter that queries the OMDB API by type (movie, series, episode)
-- **Pagination** — Navigate through large result sets with numbered page controls
-- **Movie Details** — Cinematic detail view with blurred poster backdrop, ratings, cast, plot, and more
-- **Favorites** — Save and manage favorites (persisted in localStorage)
-- **Animations** — Smooth page transitions, card hover effects, loading skeletons, and micro-interactions powered by Framer Motion
-- **Responsive** — Fully responsive grid layout for all screen sizes
+## 🌐 Live Demo
 
-## Tech Stack
+🔗 **[Visit the App Here](#)** *(Update with your Netlify link after deployment)*
 
-- **ReactJS** — UI library
-- **React Router** — Client-side routing
-- **Tailwind CSS** — Utility-first styling
-- **Framer Motion** — Animations and transitions
-- **OMDB API** — Movie data source
-- **Vite** — Build tool
+---
 
-## Getting Started
+## 📸 Preview
 
+### 🏠 Home Page
+- Curated trending sections loaded on startup
+- Glassmorphism search bar with glowing gradient effect
+- Animated scrolling film strip footer
+- Responsive 5-column movie grid
+
+### 🔍 Search Results
+- Real-time search with type filtering via OMDB API
+- Staggered card entrance animations
+- Numbered pagination with page indicators
+- Shimmer loading skeletons while fetching
+
+### 🎥 Movie Details
+- Cinematic blurred poster backdrop
+- Genre pills, rating cards, and cast chips
+- Full plot summary, director, writer, and box office info
+- Animated favorite toggle with spring physics
+
+### ❤️ Favorites
+- Persistent favorites saved to localStorage
+- One-click add/remove from any page
+- Badge counter in the navigation bar
+
+---
+
+## 🎮 How to Use
+
+| Step | Action |
+| :--- | :--- |
+| 1️⃣ | **Search** for any movie, series or TV episode using the search bar |
+| 2️⃣ | Use the **dropdown filter** to narrow results by type (Movies, Series, TV Episodes) |
+| 3️⃣ | **Browse** through paginated results in the responsive grid |
+| 4️⃣ | **Click** on any card to view full movie details |
+| 5️⃣ | Hit the **heart icon** ❤️ to save movies to your favorites |
+| 6️⃣ | Visit the **Favorites** page to see all your saved picks |
+
+---
+
+## ✨ Features
+
+- 🔍 **Smart Search** — Search by title with instant results from OMDB API
+- 🎛️ **Type Filter** — Dropdown filter using API endpoint (movie, series, episode)
+- 📄 **Pagination** — Numbered page navigation for large result sets
+- 🎥 **Movie Details** — Full info: poster, plot, cast, ratings, genre, box office and more
+- ❤️ **Favorites System** — Add/remove favorites, persisted in localStorage
+- 🔥 **Trending Sections** — Curated movie & series rows on the home page
+- 💀 **Skeleton Loading** — Shimmer placeholders while content loads
+- 🎨 **Glassmorphism UI** — Frosted glass cards with gradient glows
+- 🎞️ **Animations** — Smooth transitions, hover effects and micro-interactions
+- 📱 **Fully Responsive** — Optimized for Desktop, Tablet and Mobile
+- ⚡ **Fast Loading** — All trending data fetched in parallel
+- 🚫 **No `array.filter()`** — Uses `reduce()` for all filtering logic per project requirements
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+| :--- | :--- |
+| ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black) | UI library and component architecture |
+| ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=react-router&logoColor=white) | Client-side routing and navigation |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white) | Utility-first styling and responsive design |
+| ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) | Animations, transitions and gestures |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black) | Application logic and API integration |
+| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) | Build tool and dev server |
+| ![OMDB API](https://img.shields.io/badge/OMDB_API-003B6F?style=flat-square&logo=imdb&logoColor=white) | Movie data source |
+
+---
+
+## 📁 Project Structure
+
+```text
+movies-search-app/
+│
+├── public/
+│   ├── _redirects          # Netlify SPA routing
+│   └── favicon.svg
+│
+├── src/
+│   ├── components/
+│   │   ├── Footer.jsx      # Animated scrolling film strip footer
+│   │   ├── MovieCard.jsx   # Movie card with poster, type badge, favorite toggle
+│   │   ├── Navbar.jsx      # Glass navbar with animated active tab indicator
+│   │   ├── Pagination.jsx  # Numbered pagination with prev/next controls
+│   │   ├── SearchBar.jsx   # Glowing search input with type filter dropdown
+│   │   └── SkeletonCard.jsx # Shimmer loading placeholder card
+│   │
+│   ├── context/
+│   │   └── FavoritesContext.jsx  # React Context for favorites with localStorage
+│   │
+│   ├── pages/
+│   │   ├── FavoritesPage.jsx     # Favorites grid view
+│   │   ├── MovieDetailsPage.jsx  # Cinematic detail page with blurred backdrop
+│   │   └── SearchPage.jsx        # Home page with trending + search results
+│   │
+│   ├── services/
+│   │   └── omdbApi.js       # OMDB API service (search + details)
+│   │
+│   ├── App.jsx              # Root component with routing setup
+│   ├── main.jsx             # Entry point
+│   └── index.css            # Global styles, glass effects, animations
+│
+├── index.html
+├── vite.config.js
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Setup & Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Lokesh-web16/Movie-search.git
+```
+
+2. Navigate into the folder:
+```bash
+cd Movie-search
+```
+
+3. Install dependencies:
 ```bash
 npm install
+```
+
+4. Start the development server:
+```bash
 npm run dev
 ```
 
-The app runs at `http://localhost:5173`.
+5. Open in your browser:
+```
+http://localhost:5173
+```
 
-## Deployment (Netlify)
+---
+
+## 🚀 Deployment
+
+This project is configured for **Netlify** deployment:
 
 ```bash
 npm run build
 ```
 
-Deploy the `dist/` folder to Netlify, or connect your GitHub repo for automatic deploys. The `public/_redirects` file handles SPA routing.
+Upload the `dist/` folder to Netlify, or connect your GitHub repo for automatic deploys.
 
-## Project Structure
+The `public/_redirects` file handles SPA routing automatically.
 
-```
-src/
-├── components/          # Reusable UI components
-│   ├── MovieCard.jsx    # Animated movie card with poster, type badge, favorite toggle
-│   ├── Navbar.jsx       # Glass navigation bar with animated active tab
-│   ├── Pagination.jsx   # Numbered pagination with page buttons
-│   ├── SearchBar.jsx    # Glowing search input with type filter dropdown
-│   └── SkeletonCard.jsx # Shimmer loading placeholder
-├── context/
-│   └── FavoritesContext.jsx  # Favorites state with localStorage persistence
-├── pages/
-│   ├── FavoritesPage.jsx     # Favorites grid view
-│   ├── MovieDetailsPage.jsx  # Cinematic detail page with blurred backdrop
-│   └── SearchPage.jsx        # Main search page with results grid
-├── services/
-│   └── omdbApi.js       # OMDB API integration (search + details)
-├── App.jsx              # Root component with routing
-├── main.jsx             # Entry point
-└── index.css            # Global styles, glass effects, animations
-```
+| Platform | Link |
+| :--- | :--- |
+| 🌐 **Live Site** | [Netlify](#) *(Update after deployment)* |
+| 💻 **Source Code** | [GitHub](https://github.com/Lokesh-web16/Movie-search) |
 
-## API
+---
 
-Uses the [OMDB API](https://www.omdbapi.com/) for fetching movie data. The type filter uses the API's `type` parameter directly — no client-side array filtering.
+## 🔌 API Integration
+
+| Endpoint | Purpose | Parameters |
+| :--- | :--- | :--- |
+| `?s=query` | Search movies by title | `s`, `page`, `type` |
+| `?i=imdbID` | Get full movie details | `i`, `plot=full` |
+
+- The **type filter** uses the OMDB API's `type` parameter directly — no client-side `array.filter()` is used anywhere
+- Error messages are **type-aware** (e.g. "Series not found!" when filtering by series)
+- All API calls include proper error handling for network failures and empty results
+
+---
+
+## 🎨 Design System
+
+### Color Palette
+
+| Color | Hex | Usage |
+| :--- | :--- | :--- |
+| 🔵 **Primary** | `#3b82f6` | Buttons, active states, glows |
+| 🟣 **Accent** | `#a855f7` | Gradients, badges, highlights |
+| 🔷 **Cyan** | `#0ea5e9` | Search bar glow, accents |
+| ⬛ **Dark BG** | `#050b18` | Main background |
+| 🟫 **Card BG** | `rgba(15,23,42,0.6)` | Glass card backgrounds |
+| 🩶 **Text** | `#e2e8f0` | Primary text color |
+| 🔘 **Muted** | `#64748b` | Secondary text, placeholders |
+
+### Animation Highlights
+
+| Animation | Where | Library |
+| :--- | :--- | :--- |
+| Card entrance (staggered fade + slide) | Search results grid | Framer Motion |
+| Card hover (lift + scale poster) | Movie cards | Framer Motion + CSS |
+| Favorite heart (spring bounce + rotate) | Movie card & details | Framer Motion |
+| Active tab indicator (layout animation) | Navbar | Framer Motion |
+| Search bar glow (focus reactive) | Search input | Framer Motion |
+| Shimmer loading | Skeleton cards | CSS keyframes |
+| Scrolling film strip | Footer | Framer Motion |
+| Blurred poster backdrop | Movie details page | CSS blur |
+| Page transitions | Route changes | Framer Motion AnimatePresence |
+
+---
+
+## 📱 Responsive Breakpoints
+
+| Device | Screen Width | Grid Columns | Status |
+| :--- | :--- | :--- | :--- |
+| 🖥️ **Desktop** | `> 1024px` | 5 columns | ✅ |
+| 💻 **Laptop** | `> 768px` | 4 columns | ✅ |
+| 📱 **Tablet** | `> 640px` | 3 columns | ✅ |
+| 📱 **Mobile** | `≤ 640px` | 2 columns | ✅ |
+
+---
+
+## 📝 Key Components & Functions
+
+> Core architecture of the application:
+
+- **`omdbApi.js`** — API service layer with `searchMovies()` and `getMovieDetails()` functions, type-aware error handling
+- **`FavoritesContext.jsx`** — React Context provider with `addFavorite()`, `removeFavorite()`, `isFavorite()` — persisted to localStorage
+- **`SearchPage.jsx`** — Home page with parallel-loaded trending sections and paginated search results
+- **`MovieDetailsPage.jsx`** — Cinematic detail view with blurred backdrop, ratings, cast chips, and genre pills
+- **`MovieCard.jsx`** — Animated card component with type badge, poster hover zoom, and favorite toggle
+- **`SearchBar.jsx`** — Glowing search input with type filter dropdown, reactive focus glow
+- **`Pagination.jsx`** — Smart numbered pagination with ellipsis for large page counts
+- **`Footer.jsx`** — Animated scrolling film strip with gradient glow border
+
+---
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
