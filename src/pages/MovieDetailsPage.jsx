@@ -105,8 +105,14 @@ export default function MovieDetailsPage() {
                   className="relative w-72 rounded-2xl shadow-2xl"
                 />
               ) : (
-                <div className="relative poster-placeholder w-72 h-96 rounded-2xl">
-                  No Poster
+                <div
+                  className="relative w-72 h-96 rounded-2xl flex flex-col items-center justify-center gap-3 px-4"
+                  style={{ background: "linear-gradient(135deg, hsl(220, 50%, 20%) 0%, hsl(260, 60%, 12%) 100%)" }}
+                >
+                  <span className="text-5xl opacity-60">🎬</span>
+                  <p className="text-white text-sm font-semibold text-center leading-tight opacity-80">
+                    {movie.Title}
+                  </p>
                 </div>
               )}
             </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useFavorites } from "../context/FavoritesContext";
@@ -7,9 +8,21 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, scale: 1 },
 };
 
+/** Generates a consistent gradient based on the movie title */
+function titleToGradient(title) {
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    hash = title.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const h1 = Math.abs(hash % 360);
+  const h2 = (h1 + 40) % 360;
+  return `linear-gradient(135deg, hsl(${h1}, 50%, 20%) 0%, hsl(${h2}, 60%, 12%) 100%)`;
+}
+
 export default function MovieCard({ movie, index = 0 }) {
   const { isFavorite, addFavorite, removeFavorite } = useFavorites();
   const fav = isFavorite(movie.imdbID);
+  const [imgFailed, setImgFailed] = useState(false);
 
   const toggleFav = (e) => {
     e.preventDefault();
@@ -22,6 +35,8 @@ export default function MovieCard({ movie, index = 0 }) {
     series: "from-purple-500 to-pink-500",
     episode: "from-amber-500 to-orange-500",
   };
+
+  const hasPoster = movie.Poster && movie.Poster !== "N/A" && !imgFailed;
 
   return (
     <motion.div
@@ -41,15 +56,25 @@ export default function MovieCard({ movie, index = 0 }) {
         <div className="relative">
           {/* Poster */}
           <div className="relative overflow-hidden">
-            {movie.Poster && movie.Poster !== "N/A" ? (
+            {hasPoster ? (
               <img
                 src={movie.Poster}
                 alt={`${movie.Title} poster`}
                 className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
                 loading="lazy"
+                onError={() => setImgFailed(true)}
               />
             ) : (
-              <div className="poster-placeholder h-80">No Poster</div>
+              <div
+                className="h-80 flex flex-col items-center justify-center gap-3 px-4"
+                style={{ background: titleToGradient(movie.Title) }}
+              >
+                <span className="text-4xl opacity-60">🎬</span>
+                <p className="text-white text-sm font-semibold text-center leading-tight opacity-80">
+                  {movie.Title}
+                </p>
+                <p className="text-slate-400 text-xs">{movie.Year}</p>
+              </div>
             )}
 
             {/* Gradient overlay */}
