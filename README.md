@@ -151,16 +151,6 @@ http://localhost:5173
 
 ---
 
-## 🚀 Deployment
-
-This project is configured for **Netlify** deployment:
-
-```bash
-npm run build
-```
-
----
-
 ## 🔌 API Integration
 
 | Endpoint | Purpose | Parameters |
